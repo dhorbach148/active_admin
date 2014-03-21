@@ -213,7 +213,7 @@ module ActiveAdmin
         order_clause = OrderClause.new params[:order]
 
         if order_clause.valid?
-          chain.reorder(order_clause.to_sql(active_admin_config))
+          chain.reorder(order_clause.to_sql(order_clause))
         else
           chain # just return the chain
         end
